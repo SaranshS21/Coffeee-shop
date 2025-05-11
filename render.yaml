@@ -2,9 +2,11 @@ services:
   - type: web
     name: coffee-shop
     env: python
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
     startCommand: gunicorn myproject.wsgi
-    staticPublishPath: "staticfiles"
+    staticPublishPath: staticfiles
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: myproject.settings
