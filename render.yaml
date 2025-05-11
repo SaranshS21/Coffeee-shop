@@ -3,7 +3,7 @@ services:
     name: coffee-shop
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn myproject.wsgi:application"
+    startCommand: gunicorn myproject.wsgi
     staticPublishPath: "staticfiles"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
