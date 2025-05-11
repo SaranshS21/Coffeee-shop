@@ -2,13 +2,16 @@ services:
   - type: web
     name: coffee-shop
     env: python
-    buildCommand: |
-      pip install -r requirements.txt
-      python manage.py collectstatic --noinput
+    buildCommand: "pip install -r requirements.txt"
     startCommand: gunicorn myproject.wsgi
-    staticPublishPath: staticfiles
+    preDeployCommand: "python manage.py migrate && python manage.py collectstatic --noinput"
+    staticPublishPath: "staticfiles"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: myproject.settings
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        value: "your-secret-key-here"
