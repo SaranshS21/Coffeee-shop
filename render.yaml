@@ -3,7 +3,7 @@ services:
     name: coffee-shop
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: gunicorn myproject.wsgi
+    startCommand: gunicorn myproject.myproject.wsgi:application
     preDeployCommand: "python manage.py migrate && python manage.py collectstatic --noinput"
     staticPublishPath: "staticfiles"
     envVars:
