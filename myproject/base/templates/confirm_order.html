@@ -1,0 +1,36 @@
+{% include "nav.html" %}
+<div class="container mt-5">
+    <h2 class="mb-4">Order Confirmation</h2>
+
+    <div class="alert alert-success" role="alert">
+        Thank you for your order, {{ name }}!
+    </div>
+
+    {% if products %}
+        <ul class="list-group">
+            {% for item in products %}
+                <li class="list-group-item">
+                    <strong>Product:</strong> {{ item.product.name }} <br>
+                    <strong>Price per unit:</strong> ₹{{ item.product.price }} <br>
+                    <strong>Quantity:</strong> {{ item.quantity }} <br>
+                    <strong>Total Price:</strong> ₹{{ item.subtotal }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif product %}
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Product:</strong> {{ product.name }}</li>
+            <li class="list-group-item"><strong>Price per unit:</strong> ₹{{ product.price }}</li>
+            <li class="list-group-item"><strong>Quantity:</strong> {{ quantity }}</li>
+            <li class="list-group-item"><strong>Total Price:</strong> ₹{{ total }}</li>
+        </ul>
+    {% endif %}
+
+    <ul class="list-group mt-3">
+        <li class="list-group-item"><strong>Address:</strong> {{ address }}</li>
+        <li class="list-group-item"><strong>Phone Number:</strong> {{ phone }}</li>
+        <li class="list-group-item"><strong>Payment Method:</strong> {{ payment_method }}</li>
+    </ul>
+
+    <a href="{% url 'product_list' %}" class="btn btn-primary mt-4">Back to Products</a>
+</div>

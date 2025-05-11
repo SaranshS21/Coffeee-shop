@@ -1,0 +1,87 @@
+<!-- In base.html head -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+{% include "nav.html" %}
+
+<div class="container mt-5">
+  <h2 class="mb-4">Buy Product</h2>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <!-- Product Image and Name -->
+      <div class="d-flex align-items-center">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}" class="img-fluid" style="max-width: 100px; max-height: 100px; margin-right: 20px;">
+        <h5 class="card-title">{{ product.name }}</h5>
+      </div>
+
+      <p class="card-text">Price per unit: ₹{{ product.price }}</p>
+
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity_display" min="1" value="{{ quantity }}" onchange="updateTotal()" required>
+      </div>
+
+      <p class="card-text text-success fw-bold">
+        Total Amount: ₹<span id="total">{{ product.price|floatformat:2 }}</span>
+      </p>
+
+      <p class="card-text">Please fill in your details below to complete the purchase.</p>
+    </div>
+  </div>
+
+  <!-- Remove from cart form -->
+  <form action="{% url 'remove_from_cart' product.id %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Remove from Cart</button>
+  </form>
+
+  <form method="POST" action="{% url 'confirm_order' product.id %}">
+    {% csrf_token %}
+    
+    <input type="hidden" name="product_id" value="{{ product.id }}">
+    <input type="hidden" name="product_price" value="{{ product.price }}">
+    <input type="hidden" name="calculated_total" id="calculated_total" value="{{ product.price }}">
+    <input type="hidden" name="quantity" id="hidden_quantity" value="{{ quantity }}">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" name="name" class="form-control" id="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <textarea name="address" class="form-control" id="address" rows="3" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" name="phone" class="form-control" id="phone" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Payment Method</label>
+      <select class="form-select" name="payment_method" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="card">Card</option>
+        <option value="upi">UPI</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirm Order</button>
+  </form>
+</div>
+
+<script>
+  function updateTotal() {
+    const quantity = document.getElementById("quantity").value;
+    const price = {{ product.price }};
+    const total = quantity * price;
+    document.getElementById("total").innerText = total;
+    document.getElementById("calculated_total").value = total;
+    document.getElementById("hidden_quantity").value = quantity;
+  }
+
+  // Call updateTotal on page load to initialize the total
+  updateTotal();
+</script>

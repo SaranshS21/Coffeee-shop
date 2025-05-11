@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% include "nav.html" %}
+<div class="container text-center mt-5">
+    <h2>You have been logged out.</h2>
+    <p class="lead">Thanks for visiting Coffee Shop!</p>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-3">Log in again</a>
+</div>
+

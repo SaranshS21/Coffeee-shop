@@ -1,0 +1,231 @@
+{% load static %}
+{% include "nav.html" %}
+<!-- Carousel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="height: 400px;">
+      <img src="https://images.unsplash.com/photo-1495774856032-8b90bbb32b32?q=80&w=1470&auto=format&fit=crop" class="d-block w-100" alt="Coffee Variety">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Wide Variety of Coffees</h5>
+        <p>Discover a premium selection of coffee all in one place.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="height: 400px;">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1374&auto=format&fit=crop" class="d-block w-100" alt="Pre-mixes">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Premium Pre-Mixes</h5>
+        <p>Ready-to-blend pre-mixes for the perfect cup every time.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="height: 400px;">
+      <img src="https://images.unsplash.com/photo-1528699633788-424224dc89b5?q=80&w=1466&auto=format&fit=crop" class="d-block w-100" alt="Cookies">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Cookies for Your Cravings</h5>
+        <p>Indulge in a delicious range of handcrafted cookies.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% comment %} <h3>Here is your product</h3> {% endcomment %}
+{% comment %} <!-- Static Products Block (Hardcoded) -->
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <h2 class="mb-4">Featured Products</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      <!-- Product 1 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.pexels.com/photos/1510690/pexels-photo-1510690.jpeg" class="card-img-top" alt="Snack" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Crunchy bites that pair perfectly with hot coffee.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/1/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/1/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary"> ₹3.99</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://picsum.photos/id/63/200/300" class="card-img-top" alt="Coffee Image" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Dark roast beans with deep aroma and flavor for your morning.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/2/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/2/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹8.99</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg" class="card-img-top" alt="Coffee" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Smooth Arabica coffee beans for light mornings.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/3/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/3/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹6.50</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg" class="card-img-top" alt="Cookies" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Buttery cookies baked fresh with a hint of vanilla.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/4/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/4/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹4.20</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://plus.unsplash.com/premium_photo-1670469009826-db07ab733925?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Cold Brew" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Refreshing cold brew perfect for hot afternoons.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/5/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/5/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹5.99</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.pexels.com/photos/302901/pexels-photo-302901.jpeg" class="card-img-top" alt="Espresso" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Rich espresso shots for serious coffee lovers with love.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/6/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/6/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹7.00</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.pexels.com/photos/1813466/pexels-photo-1813466.jpeg" class="card-img-top" alt="Gift Pack" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">A gift box of assorted cookies and instant coffees.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/7/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/7/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹15.00</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.pexels.com/photos/302902/pexels-photo-302902.jpeg" class="card-img-top" alt="Latte" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Creamy latte mix for coffee shop experience at home.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/8/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/8/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹6.75</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Coffee Mug" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">Elegant ceramic mug — sip in style every morning.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/product/9/" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="/buy/9/" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹9.90</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+<!-- Dynamic Products from Database -->
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <h2 class="mb-4">More Products</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for product in products %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}" style="height: 225px;">
+          <div class="card-body">
+            <p class="card-text">{{ product.description }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="{% url 'product_details' product.id %}" class="btn btn-sm btn-outline-secondary">View</a>
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-sm btn-outline-secondary">Buy</a>
+              </div>
+              <small class="text-body-secondary">₹{{ product.price }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p>No products available at the moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>

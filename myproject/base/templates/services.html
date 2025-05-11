@@ -1,0 +1,63 @@
+{% include "nav.html" %}
+
+<div class="container text-center my-5">
+  <div class="col-lg-8 col-md-10 mx-auto">
+    <h1 class="fw-bold mb-4">Premium Coffee Experiences, Now in Your City</h1>
+    <p class="lead text-body-secondary mb-4">
+      From handcrafted brews to cozy café corners, we bring more than just coffee—we deliver moments. Our curated services are designed to energize your mornings, spark your meetings, and relax your evenings.
+    </p>
+    <p>
+      <a href="#services" class="btn btn-primary my-2">Explore Our Services</a>
+      <a href="{% url "contact" %}" class="btn btn-outline-secondary my-2">Get in Touch</a>
+    </p>
+  </div>
+</div>
+
+<hr class="my-5">
+
+<div class="container" id="services">
+  <div class="row g-4">
+    <!-- Service 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://images.pexels.com/photos/302887/pexels-photo-302887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+             class="card-img-top" 
+             alt="Barista Service" 
+             style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">Barista On-Demand</h5>
+          <p class="card-text">Host events or office hours with our certified baristas delivering fresh brews on-site.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://img.freepik.com/free-photo/high-angle-man-with-coffee-beans_23-2148551559.jpg?t=st=1746359289~exp=1746362889~hmac=24be7fa3ce885fe361f3194d1c31c4677325bce1745e137bf9da78b33445d75b&w=996" 
+             class="card-img-top" 
+             alt="Subscription Plan" 
+             style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">Coffee Subscriptions</h5>
+          <p class="card-text">Get weekly deliveries of your favorite beans—freshly roasted and ethically sourced.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://img.freepik.com/free-vector/coffee-shop-building-facade-with-signboard_3446-91.jpg?t=st=1746359324~exp=1746362924~hmac=e2270827468f2109b287859f27dfe9d6ee541e33fe1f1abedb3d091770d32dfe&w=740" 
+             class="card-img-top" 
+             alt="In-Café Experience" 
+             style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">In-Café Experience</h5>
+          <p class="card-text">Relax in our artisan cafés with seasonal drinks, snacks, and a free workspace.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
