@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: coffee-shop
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn myproject.wsgi:application"
+    staticPublishPath: "staticfiles"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: myproject.settings
+      - key: PYTHONUNBUFFERED
+        value: "1"
