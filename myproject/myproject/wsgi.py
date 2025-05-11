@@ -1,16 +1,10 @@
-"""
-WSGI config for myproject project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
-"""
-
 import os
+import sys
 
-from django.core.wsgi import get_wsgi_application
+# Add the parent directory of your Django project to the Python path
+sys.path.append('/opt/render/project/src/myproject')
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
+from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
